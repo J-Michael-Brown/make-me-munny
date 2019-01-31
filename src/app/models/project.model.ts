@@ -8,7 +8,7 @@ export class Project {
   public rewards: Reward[];
   public funds: Pledge[];
 
-  constructor(public name: string, public username: string, public description: string, public associates: string[], public catagories: string[]){}
+  constructor(public name: string, public username: string, public description: string, public associates: string[], public catagories: string[] = []){}
 
 
   startProject(goals: Milestone[], rewards: Reward[]){
