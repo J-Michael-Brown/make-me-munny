@@ -11,24 +11,19 @@
       </div>
 
       <div>
+        <label>Project Started By:</label>
+        <br>
+        <input #newUsername>
+      </div>
+
+      <div>
         <label>Project Description:</label>
         <br>
         <input #newDescription>
       </div>
 
-      <div>
-        <label>Project Associates:</label>
-        <br>
-        <input #newAssociates>
-      </div>
 
-      <div>
-        <label>Project Catagories:</label>
-        <br>
-        <input #newCategories>
-      </div>
-
-      <button (click)="submitForm(newTitle.value, newAssociates.value, newDescription.value, newCategories.value)">Add</button>
+      <button (click)="submitForm(newTitle.value, newUsername.value, newDescription.value)">Add</button>
     </div>
   </div>
 </div>
