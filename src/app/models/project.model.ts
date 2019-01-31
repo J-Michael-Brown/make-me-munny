@@ -15,4 +15,5 @@ export class Project {
     this.goals = goals;
     this.rewards = rewards;
   }
+
 }
