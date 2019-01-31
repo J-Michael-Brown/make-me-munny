@@ -6,3 +6,15 @@
   background-color: #f5f5f5;
   padding: 15px;
 }
+
+.container-fluid {
+
+}
+
+.navbar-right {
+  color: green;
+  /* font-size: 30pt; */
+
+  display: inline;
+  /* text-align: right; */
+}
