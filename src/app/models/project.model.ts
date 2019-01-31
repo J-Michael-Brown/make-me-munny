@@ -4,15 +4,15 @@ import { Pledge } from './pledge.model';
 
 export class Project {
 
-  public goals: Milestone[];
+  public milestones: Milestone[];
   public rewards: Reward[];
-  public funds: Pledge[];
+  public pledges: Pledge[];
 
-  constructor(public name: string, public username: string, public description: string, public associates: string[], public catagories: string[] = []){}
+  constructor(public title: string, public username: string, public description: string, public associates: string[], public catagories: string[] = []){}
 
 
-  startProject(goals: Milestone[], rewards: Reward[]){
-    this.goals = goals;
+  startProject(milestones: Milestone[], rewards: Reward[]){
+    this.milestones = milestones;
     this.rewards = rewards;
   }
 
