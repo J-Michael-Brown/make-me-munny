@@ -19,4 +19,14 @@ export class ProjectsService {
   getProjectById(projectId: string) {
     return this.database.object('projects/' + projectId)
   }
+  updateProject(localUpdatedProject){
+    var projectEntryInFirebase = this.getProjectById(localUpdatedProject.$key);
+    projectEntryInFirebase.update({title: localUpdatedProject.title,
+                                artist: localUpdatedProject.artist,
+                                description: localUpdatedProject.description});
+  }
+  deleteProject(localProjectToDelete){
+    var projectEntryInFirebase = this.getProjectById(localProjectToDelete.$key);
+    projectEntryInFirebase.remove();
+  }
 }
