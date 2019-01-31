@@ -19,8 +19,8 @@ export class ProjectsComponent implements OnInit {
 
   constructor(private router: Router, private projectsService: ProjectsService) {}
 
-  goToProjectDetails(clickedProject: Project) {
-    // this.router.navigate(['projects', clickedProject.$key]);
+  goToDetailPage(clickedProject: Project) {
+    this.router.navigate(['projects', clickedProject.$key]);
   }
 
   ngOnInit() {
