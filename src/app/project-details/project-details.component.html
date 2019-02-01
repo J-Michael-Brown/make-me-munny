@@ -1,1 +1,27 @@
 <h1>{{(projectToDisplay | async)?.title}}</h1>
+<h3>Created By {{(projectToDisplay | async)?.username}}</h3>
+<p>{{(projectToDisplay | async)?.description}}</p>
+
+<p>Example first catagory: {{(projectToDisplay | async)?.categories[0]}}</p>
+<!--\/ bad code \/-->
+<h4>Catagories</h4>
+<ul>
+  <li *ngFor="let category of projectToDisplay.categories | async">{{category}}</li>
+</ul>
+
+
+
+<ul>
+  <li *ngFor="let associate of projectToDisplay.associates | async">{{associate}}</li>
+</ul>
+<ul>
+  <div *ngFor="let pledge of projectToDisplay.pledges | async">
+    <li>{{pledge.username}}: ${{pledge.amount}}</li>
+  </div>
+</ul>
+<ul>
+  <!-- <li *ngFor="let milestone of projectToDisplay.milestones | async">{{milestone.username}}: {{milestone.amount}}</li> -->
+</ul>
+<ul>
+  <!-- <li *ngFor="let reward of projectToDisplay.rewards | async">{{reward.username}}: {{reward.amount}}</li> -->
+</ul>
