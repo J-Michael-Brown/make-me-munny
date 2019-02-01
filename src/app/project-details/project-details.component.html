@@ -2,26 +2,30 @@
 <h3>Created By {{(projectToDisplay | async)?.username}}</h3>
 <p>{{(projectToDisplay | async)?.description}}</p>
 
-<p>Example first catagory: {{(projectToDisplay | async)?.categories[0]}}</p>
-<!--\/ bad code \/-->
 <h4>Catagories</h4>
 <ul>
-  <li *ngFor="let category of projectToDisplay.categories | async">{{category}}</li>
+  <li *ngFor="let category of (projectToDisplay | async)?.categories">{{category}}</li>
 </ul>
 
 
-
+<h4>Associates</h4>
 <ul>
-  <li *ngFor="let associate of projectToDisplay.associates | async">{{associate}}</li>
+  <li *ngFor="let associate of (projectToDisplay | async)?.associates">{{associate}}</li>
 </ul>
+
+<h4>Pledges</h4>
 <ul>
-  <div *ngFor="let pledge of projectToDisplay.pledges | async">
+  <div *ngFor="let pledge of (projectToDisplay | async)?.pledges">
     <li>{{pledge.username}}: ${{pledge.amount}}</li>
   </div>
 </ul>
+
+<h4>Milestones</h4>
 <ul>
-  <!-- <li *ngFor="let milestone of projectToDisplay.milestones | async">{{milestone.username}}: {{milestone.amount}}</li> -->
+  <li *ngFor="let milestone of (projectToDisplay | async)?.milestones">${{milestone.funds}}: {{milestone.description}}</li>
 </ul>
+
+<h4>Rewards</h4>
 <ul>
-  <!-- <li *ngFor="let reward of projectToDisplay.rewards | async">{{reward.username}}: {{reward.amount}}</li> -->
+  <li *ngFor="let reward of (projectToDisplay | async)?.rewards">${{reward.funds}}: {{reward.description}}</li>
 </ul>
